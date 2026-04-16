@@ -27,12 +27,10 @@ std::vector<Task> LoadTasksFromFile(const std::string& filename)
 
 	std::vector<Task> tasks(size);
 	for (int i = 0; i < size; i++) {
-		Task task;
 		std::string tempDescr;
-		istream >> tempDescr >> task.done;
+		istream >> tempDescr >> tasks[i].done;
 		std::replace(tempDescr.begin(), tempDescr.end(), '_', ' ');
-		task.description = tempDescr;
-		tasks.push_back(task);
+		tasks[i].description = tempDescr;
 	}
 
 	istream.close();
