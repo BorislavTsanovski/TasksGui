@@ -35,5 +35,6 @@ std::vector<Task> LoadTasksFromFile(const std::string& filename)
 		tasks.push_back(task);
 	}
 
+	istream.close();
 	return tasks;
 }
